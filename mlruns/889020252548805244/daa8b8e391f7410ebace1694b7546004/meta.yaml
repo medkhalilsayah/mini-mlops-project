@@ -1,0 +1,15 @@
+artifact_uri: file:///home/khalil/Bureau/mini-mlops-project/mlruns/889020252548805244/daa8b8e391f7410ebace1694b7546004/artifacts
+end_time: 1769009785398
+entry_point_name: ''
+experiment_id: '889020252548805244'
+lifecycle_stage: active
+run_id: daa8b8e391f7410ebace1694b7546004
+run_name: fearless-goose-526
+run_uuid: daa8b8e391f7410ebace1694b7546004
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1769009783467
+status: 3
+tags: []
+user_id: khalil
