@@ -2,3 +2,6 @@ pandas
 scikit-learn
 joblib
 matplotlib
+mlflow
+fastapi
+uvicorn
