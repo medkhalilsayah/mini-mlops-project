@@ -30,8 +30,6 @@ mini-mlops-project/
 ├── requirements.txt
 └── README.md
 
-yaml
-Copier le code
 
 ---
 
@@ -47,27 +45,29 @@ Copier le code
 ## 3) Installation (mode local)
 
 ### 3.1 Créer un environnement virtuel
-```bash
+
 python3 -m venv .venv
 source .venv/bin/activate
-3.2 Installer les dépendances
-bash
-Copier le code
+
+### 3.2 Installer les dépendances
+
 pip install --upgrade pip
 pip install -r requirements.txt
-4) Données — DVC
-4.1 Récupérer les données (après clone)
-bash
-Copier le code
+
+## 4) Données — DVC
+
+### 4.1 Récupérer les données (après clone)
+
 dvc pull
-4.2 Vérifier les fichiers
-bash
-Copier le code
+
+### 4.2 Vérifier les fichiers
+
 ls data/raw
+
 # heart.csv  heart.csv.dvc
-5) Entraînement local (baseline simple)
-bash
-Copier le code
+
+## 5) Entraînement local (baseline simple)
+
 python src/train.py
 Sortie attendue :
 
@@ -75,23 +75,21 @@ Accuracy sur test
 
 Modèle sauvegardé dans models/model.joblib
 
-6) MLflow (livrable : baseline + variation)
-6.1 Lancer l’UI MLflow
-bash
-Copier le code
+## 6) MLflow (livrable : baseline + variation)
+
+### 6.1 Lancer l’UI MLflow
+
 mlflow ui --backend-store-uri ./mlruns --port 5000
 Ouvrir : http://localhost:5000
 
-6.2 Lancer deux runs (baseline + variation)
+### 6.2 Lancer deux runs (baseline + variation)
+
 Run 1 (baseline)
 
-bash
-Copier le code
 python src/train_mlflow.py --C 1.0 --max_iter 1000
+
 Run 2 (variation)
 
-bash
-Copier le code
 python src/train_mlflow.py --C 0.1 --max_iter 1000
 Dans l’UI MLflow, on doit voir :
 
@@ -101,47 +99,44 @@ métrique accuracy
 
 artefacts : confusion_matrix.png + modèle
 
-7) ZenML (pipeline obligatoire)
-7.1 Initialiser ZenML
-bash
-Copier le code
+## 7) ZenML (pipeline obligatoire)
+
+### 7.1 Initialiser ZenML
+
 zenml init
-7.2 Exécuter le pipeline (2 runs)
+
+### 7.2 Exécuter le pipeline (2 runs)
+
 Run 1
 
-bash
-Copier le code
 python src/zenml_pipeline.py --C 1.0 --max_iter 1000
+
 Run 2
 
-bash
-Copier le code
 python src/zenml_pipeline.py --C 0.1 --max_iter 1000
-7.3 Voir les runs (preuve)
-bash
-Copier le code
+
+### 7.3 Voir les runs (preuve)
+
 zenml pipeline runs list
-7.4 Dashboard ZenML (optionnel mais recommandé)
-bash
-Copier le code
+
+### 7.4 Dashboard ZenML (optionnel mais recommandé)
+
 zenml up
 Dashboard : http://127.0.0.1:8237
 
-8) API d’inférence (FastAPI)
-8.1 Lancer l’API localement
-bash
-Copier le code
+## 8) API d’inférence (FastAPI)
+
+### 8.1 Lancer l’API localement
+
 uvicorn src.api:app --host 0.0.0.0 --port 8000
-8.2 Tester l’API
+
+### 8.2 Tester l’API
+
 Health
 
-bash
-Copier le code
 curl http://127.0.0.1:8000/health
 Predict
 
-bash
-Copier le code
 curl -X POST "http://127.0.0.1:8000/predict" \
   -H "Content-Type: application/json" \
   -d '{
@@ -161,17 +156,20 @@ curl -X POST "http://127.0.0.1:8000/predict" \
     "ca": 0,
     "thal": 2
   }'
-9) Docker (MLflow + API)
-9.1 Lancer la stack
-bash
-Copier le code
+
+## 9) Docker (MLflow + API)
+
+### 9.1 Lancer la stack
+
 docker-compose up -d --build
-9.2 Vérifier les conteneurs
-bash
-Copier le code
+
+### 9.2 Vérifier les conteneurs
+
 docker ps
+
 # mlflow sur :5000, api sur :8000
-9.3 Tester
+
+### 9.3 Tester
 
 MLflow : http://localhost:5000
 
@@ -179,7 +177,7 @@ API :
 
 curl http://127.0.0.1:8000/health
 
-10) Livrables (checklist)
+## 10) Livrables (checklist)
 
 ✅ Lien GitHub / GitLab
 
