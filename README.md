@@ -193,6 +193,6 @@ curl http://127.0.0.1:8000/health
 
 ✅ Démo d’inférence : commande curl + sortie
 
-Auteur
+## Auteur
 
 Projet réalisé par SAYAH Mohamed Khalil dans le cadre du mini-projet MLOps.
