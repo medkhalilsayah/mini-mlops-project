@@ -1,0 +1,15 @@
+artifact_uri: file:///home/khalil/Bureau/mini-mlops-project/mlruns/587222487416315932/8cf28650f558454c8d3465b7b5209cbd/artifacts
+end_time: 1769094921346
+entry_point_name: ''
+experiment_id: '587222487416315932'
+lifecycle_stage: active
+run_id: 8cf28650f558454c8d3465b7b5209cbd
+run_name: zenml_C=0.5_maxiter=1000
+run_uuid: 8cf28650f558454c8d3465b7b5209cbd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1769094921338
+status: 3
+tags: []
+user_id: khalil

@@ -1,0 +1,6 @@
+artifact_location: file:///home/khalil/Bureau/mini-mlops-project/mlruns/587222487416315932
+creation_time: 1769094885604
+experiment_id: '587222487416315932'
+last_update_time: 1769094885604
+lifecycle_stage: active
+name: zenml-heart-pipeline
